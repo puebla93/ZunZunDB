@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Artículos</h1>
+<%= link_to '+ Nuevo Artículo', new_article_path %>
+<br>
+<br>
+<table style="width: 150%">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Ilustrador</th>
+      <th>Fotógrafo</th>
+      <th>Género</th>
+      <th>Tema</th>
+      <th>Revista</th>
+      <th>Colorista</th>
+      <th>Cant.Páginas</th>
+      <th>PDF</th>
+      <th>LineaTemática</th>
+      <th>Original</th>
+      <th>UbicaciónOriginal</th>
+      <th>Sección</th>
+      <th colspan="10"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.author %></td>
+        <td><%= article.ilustrator %></td>
+        <td><%= article.photographer %></td>
+        <td><%= article.gender %></td>
+        <td><%= article.subject %></td>
+        <td><%= article.magazineId %></td>
+        <td><%= article.colorist %></td>
+        <td><%= article.totalpages %></td>
+        <td><%= article.pdf %></td>
+        <td><%= article.thematicdesing %></td>
+        <td><%= article.original %></td>
+        <td><%= article.originallocation %></td>
+        <td><%= article.section %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<br>

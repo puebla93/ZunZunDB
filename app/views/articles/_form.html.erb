@@ -1,0 +1,73 @@
+<%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Título" %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label "Autor" %><br>
+    <%= f.select :author, options_for_select(@employees) %>
+  </div>
+  <div class="field">
+    <%= f.label "Ilustrador" %><br>
+    <%= f.select :ilustrator, options_for_select(@employees), include_blank: true %>
+  </div>
+    <div class="field">
+      <%= f.label "Fotógrafo" %><br>
+      <%= f.select :photographer, options_for_select(@employees), include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label "Género" %><br>
+      <%= f.text_field :gender %>
+    </div>
+    <div class="field">
+      <%= f.label "Tema" %><br>
+      <%= f.text_field :subject %>
+    </div>
+    <div class="field">
+      <%= f.label "Revista" %><br>
+      <%= f.select :magazineId, @magazines %>
+    </div>
+    <div class="field">
+      <%= f.label "Colorista" %><br>
+      <%= f.select :colorist, @employees %>
+    </div>
+    <div class="field">
+      <%= f.label "Cant.Páginas" %><br>
+      <%= f.number_field :totalpages %>
+    </div>
+    <div class="field">
+      <%= f.label "PDF" %><br>
+      <%= f.text_field :pdf %>
+    </div>
+    <div class="field">
+      <%= f.label "LíneaTemática" %><br>
+      <%= f.text_field :thematicdesing %>
+    </div>
+    <div class="field">
+      <%= f.label "Original" %><br>
+      <%= f.text_field :original %>
+    </div>
+    <div class="field">
+      <%= f.label "UbicaciónOriginal" %><br>
+      <%= f.text_field :originallocation %>
+    </div>
+    <div class="field">
+      <%= f.label "Sección" %><br>
+      <%= f.text_field :section %>
+    </div>
+    <div class="actions">
+      <%= f.submit("Crear Artículo") %>
+    </div>
+<% end %>

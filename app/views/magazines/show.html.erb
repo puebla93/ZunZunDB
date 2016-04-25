@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @magazine.number %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @magazine.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @magazine.year %>
+</p>
+
+<p>
+  <strong>Cd:</strong>
+  <%= @magazine.cd %>
+</p>
+
+<p>
+  <strong>Issn:</strong>
+  <%= @magazine.issn %>
+</p>
+
+<%= link_to 'Edit', edit_magazine_path(@magazine) %> |
+<%= link_to 'Back', magazines_path %>

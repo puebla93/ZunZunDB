@@ -1,0 +1,97 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Título" %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label "Año" %><br>
+    <%= f.number_field :year %>
+  </div>
+    <div class="field">
+      <%= f.label "Autor" %><br>
+      <%= f.select :author, options_for_select(@employees), include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label "Ilustrador" %><br>
+      <%= f.select :ilustrator, options_for_select(@employees), include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label "Fotógrafo" %><br>
+      <%= f.select :photographer, options_for_select(@employees), include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label "Cant.Páginas" %><br>
+      <%= f.number_field :totalpages %>
+    </div>
+    <div class="field">
+      <%= f.label "Formato" %><br>
+      <%= f.text_field :format %>
+    </div>
+    <div class="field">
+      <%= f.label "Editor" %><br>
+      <%= f.select :editor, options_for_select(@employees), include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label "AñoEdición" %><br>
+      <%= f.text_field :editionyear %>
+    </div>
+    <div class="field">
+      <%= f.label "Editora" %><br>
+      <%= f.text_field :editora %>
+    </div>
+    <div class="field">
+      <%= f.label "ISBN" %><br>
+      <%= f.number_field :isbn %>
+    </div>
+    <div class="field">
+      <%= f.label "Encuadernación" %><br>
+      <%= f.text_field :binding %>
+    </div>
+    <div class="field">
+      <%= f.label "Realisación" %><br>
+      <%= f.text_field :realisation %>
+    </div>
+    <div class="field">
+      <%= f.label "Diseñador" %><br>
+      <%= f.select :designer, options_for_select(@employees), include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label "Corrección" %><br>
+      <%= f.text_field :correction %>
+    </div>
+    <div class="field">
+      <%= f.label "Clasificación" %><br>
+      <%= f.text_field :clasification %>
+    </div>
+    <div class="field">
+      <%= f.label "Contenido" %><br>
+      <%= f.text_field :content %>
+    </div>
+    <div class="field">
+      <%= f.label "Pancarta" %><br>
+      <%= f.text_field :banner %>
+    </div>
+    <div class="field">
+      <%= f.label "Troquelado" %><br>
+      <%= f.text_field :troquelado %>
+    </div>
+    <div class="field">
+      <%= f.label "Colección" %><br>
+      <%= f.text_field :collection %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Crear Libro"%>
+    </div>
+<% end %>

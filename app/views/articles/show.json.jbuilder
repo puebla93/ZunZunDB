@@ -1,0 +1,1 @@
+json.extract! @article, :id, :title, :author, :ilustrator, :photographer, :gender, :subject, :magazineId, :colorist, :totalpages, :pdf, :thematicdesing, :original, :originallocation, :section, :created_at, :updated_at
