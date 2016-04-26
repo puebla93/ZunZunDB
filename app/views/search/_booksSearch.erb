@@ -1,0 +1,58 @@
+<br>
+<%= label_tag "título" %><%= text_field_tag "title" %>
+<br>
+<%= label_tag "año" %><%= text_field_tag "year" %>
+<p><b>Autor:</b></p>
+<uL>
+  <%= label_tag "* nombre" %><%= text_field_tag "author_name" %>
+  <br>
+  <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
+</uL>
+<p><b>Ilustrador:</b></p>
+<uL>
+  <%= label_tag "* nombre" %><%= text_field_tag "ilustrator_name" %>
+  <br>
+  <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
+</uL>
+<p><b>Fotógrafo:</b></p>
+<uL>
+  <%= label_tag "* nombre" %><%= text_field_tag "photographer_name" %>
+  <br>
+  <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
+</uL>
+<%= label_tag "cant. páginas" %><%= text_field_tag "totalpages" %>
+<br>
+<%= label_tag "formato" %><%= text_field_tag "format" %>
+<br>
+<p><b>Editor:</b></p>
+<uL>
+  <%= label_tag "* nombre" %><%= text_field_tag "editor_name" %>
+  <br>
+  <%= label_tag "* género" %><%= select_tag "editor_gender", options_for_select(["M", "F"]), include_blank: true %>
+</uL>
+<%= label_tag "año edición" %><%= text_field_tag "editionyear" %>
+<br>
+<%= label_tag "editora" %><%= text_field_tag "editora" %>
+<br>
+<%= label_tag "isbn" %><%= text_field_tag "isbn" %>
+<br>
+<%= label_tag "encuadernación" %><%= text_field_tag "binding" %>
+<br>
+<%= label_tag "realisación" %><%= text_field_tag "realisation" %>
+<p><b>Diseñador:</b></p>
+<uL>
+  <%= label_tag "* nombre" %><%= text_field_tag "designer_name" %>
+  <br>
+  <%= label_tag "* género" %><%= select_tag "designer_gender", options_for_select(["M", "F"]), include_blank: true %>
+</uL>
+<%= label_tag "corrección" %><%= text_field_tag "correction" %>
+<br>
+<%= label_tag "clasificación" %><%= text_field_tag "clasification" %>
+<br>
+<%= label_tag "contenido" %><%= text_field_tag "content" %>
+<br>
+<%= label_tag "pancarta" %><%= text_field_tag "banner" %>
+<br>
+<%= label_tag "troquelado" %><%= text_field_tag "troquelado" %>
+<br>
+<%= label_tag "colección" %><%= text_field_tag "collection" %>

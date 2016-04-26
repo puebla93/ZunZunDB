@@ -5,6 +5,8 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = Employee.all
+    @employees = @employees.where(:name => params[:name]) if not params[:name].nil? and params[:name] != ''
+    @employees = @employees.where(:gender => params[:gender]) if not params[:gender].nil? and params[:gender] != ''
   end
 
   # GET /employees/1
@@ -15,19 +17,16 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new
-    authorize! :new, @employee
   end
 
   # GET /employees/1/edit
   def edit
-    authorize! :edit, @employee
   end
 
   # POST /employees
   # POST /employees.json
   def create
     @employee = Employee.new(employee_params)
-    authorize! :create, @employee
 
     respond_to do |format|
       if @employee.save
@@ -43,7 +42,6 @@ class EmployeesController < ApplicationController
   # PATCH/PUT /employees/1
   # PATCH/PUT /employees/1.json
   def update
-    authorize! :update, @employee
     respond_to do |format|
       if @employee.update(employee_params)
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
@@ -58,7 +56,6 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1
   # DELETE /employees/1.json
   def destroy
-    authorize! :destroy, @employee
     @employee.destroy
     respond_to do |format|
       format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }

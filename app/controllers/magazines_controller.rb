@@ -5,7 +5,11 @@ class MagazinesController < ApplicationController
   # GET /magazines.json
   def index
     @magazines = Magazine.all
-    #@magazines=@magazines.where(:name => params[:name]) if params[:name].nil?
+    @magazines = @magazines.where(:number => params[:number]) if not params[:number].nil? and params[:number] != ''
+    @magazines = @magazines.where(:month => params[:month]) if not params[:month].nil? and params[:month] != ''
+    @magazines = @magazines.where(:year => params[:year]) if not params[:year].nil? and params[:year] != ''
+    @magazines = @magazines.where(:cd => params[:cd]) if not params[:cd].nil? and params[:cd] != ''
+    @magazines = @magazines.where(:issn => params[:issn]) if not params[:issn].nil? and params[:issn] != ''
   end
 
   # GET /magazines/1
@@ -16,19 +20,16 @@ class MagazinesController < ApplicationController
   # GET /magazines/new
   def new
     @magazine = Magazine.new
-    authorize! :new, @magazine
   end
 
   # GET /magazines/1/edit
   def edit
-    authorize! :edit, @magazine
   end
 
   # POST /magazines
   # POST /magazines.json
   def create
     @magazine = Magazine.new(magazine_params)
-    authorize! :create, @magazine
 
     respond_to do |format|
       if @magazine.save
@@ -44,8 +45,6 @@ class MagazinesController < ApplicationController
   # PATCH/PUT /magazines/1
   # PATCH/PUT /magazines/1.json
   def update
-    authorize! :update, @magazine
-
     respond_to do |format|
       if @magazine.update(magazine_params)
         format.html { redirect_to @magazine, notice: 'Magazine was successfully updated.' }
@@ -60,8 +59,6 @@ class MagazinesController < ApplicationController
   # DELETE /magazines/1
   # DELETE /magazines/1.json
   def destroy
-    authorize! :destroy, @magazine
-
     @magazine.destroy
     respond_to do |format|
       format.html { redirect_to magazines_url, notice: 'Magazine was successfully destroyed.' }

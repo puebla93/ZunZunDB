@@ -1,50 +1,52 @@
 <br>
-<%= label_tag "title" %><%= text_field_tag "title" %>
-<p><b>Author:</b></p>
+<%= label_tag "título" %><%= text_field_tag "title" %>
+<p><b>Autor:</b></p>
 <uL>
-  <%= label_tag "* name" %><%= text_field_tag "author_name" %>
+  <%= label_tag "* nombre" %><%= text_field_tag "author_name" %>
   <br>
-  <%= label_tag "* gender" %><%= text_field_tag "author_gender" %>
+  <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
-<p><b>Ilustrator:</b></p>
+<p><b>Ilustrador:</b></p>
 <uL>
-  <%= label_tag "* name" %><%= text_field_tag "ilustrator_name" %>
+  <%= label_tag "* nombre" %><%= text_field_tag "ilustrator_name" %>
   <br>
-  <%= label_tag "* gender" %><%= text_field_tag "ilustrator_gender" %>
+  <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
-<p><b>Photographer:</b></p>
+<p><b>Fotógrafo:</b></p>
 <uL>
-  <%= label_tag "* name" %><%= text_field_tag "photographer_name" %>
+  <%= label_tag "* nombre" %><%= text_field_tag "photographer_name" %>
   <br>
-  <%= label_tag "* gender" %><%= text_field_tag "photographer_gender" %>
+  <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
-<%= label_tag "gender" %><%= text_field_tag "gender" %>
+<%= label_tag "género" %><%= text_field_tag "gender" %>
 <br>
-<%= label_tag "subject" %><%= text_field_tag "subject" %>
-<p><b>Magazine:</b></p>
+<%= label_tag "tema" %><%= text_field_tag "subject" %>
+<p><b>Revista:</b></p>
 <uL>
-  <%= label_tag "* number" %><%= text_field_tag "magazine_number" %>
+  <%= label_tag "* número" %><%= text_field_tag "magazine_number" %>
   <br>
-  <%= label_tag "* month" %><%= text_field_tag "magazine_month" %>
+  <%= label_tag "* mes" %><%= select_tag "magazine_month", options_for_select(["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]), include_blank: true %>
   <br>
-  <%= label_tag "* year" %><%= text_field_tag "magazine_year" %>
+  <%= label_tag "* año" %><%= text_field_tag "magazine_year" %>
+  <br>
+  <%= label_tag "* cd" %><%= text_field_tag "magazine_cd" %>
   <br>
   <%= label_tag "* issn" %><%= text_field_tag "magazine_issn" %>
 </ul>
-<p><b>Colorist:</b></p>
+<p><b>Colorista:</b></p>
 <uL>
-  <%= label_tag "* name" %><%= text_field_tag "colorist_name" %>
+  <%= label_tag "* nombre" %><%= text_field_tag "colorist_name" %>
   <br>
-  <%= label_tag "* gender" %><%= text_field_tag "colorist_gender" %>
+  <%= label_tag "* género" %><%= select_tag "colorist_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
-<%= label_tag "pages" %><%= text_field_tag "pages" %>
+<%= label_tag "cant. páginas" %><%= text_field_tag "totalpages" %>
 <br>
 <%= label_tag "pdf" %><%= text_field_tag "pdf" %>
 <br>
-<%= label_tag "thematicdesing" %><%= text_field_tag "thematicdesing" %>
+<%= label_tag "línea temática" %><%= text_field_tag "thematicdesing" %>
 <br>
 <%= label_tag "original" %><%= text_field_tag "original" %>
 <br>
-<%= label_tag "origlocation" %><%= text_field_tag "origlocation" %>
+<%= label_tag "ubicación original" %><%= text_field_tag "originallocation" %>
 <br>
-<%= label_tag "section" %><%= text_field_tag "section" %>
+<%= label_tag "sección" %><%= text_field_tag "section" %>
