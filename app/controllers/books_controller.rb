@@ -1,11 +1,52 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action :set_var, only: [:new, :edit, :create, :update]
+  before_action :set_var, only: [:new, :index, :edit, :create, :update]
+  before_action :authorize, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    if params[:order].nil? or params[:order] == "1"
+      @books = Book.all.order(:title)
+    elsif params[:order] == "2"
+      @books = Book.all.order(:year)
+    elsif params[:order] == "3"
+      @books = Book.all.order(:author)
+    elsif params[:order] == "4"
+      @books = Book.all.order(:ilustrator)
+    elsif params[:order] == "5"
+      @books = Book.all.order(:photographer)
+    elsif params[:order] == "6"
+      @books = Book.all.order(:totalpages)
+    elsif params[:order] == "7"
+      @books = Book.all.order(:format)
+    elsif params[:order] == "8"
+      @books = Book.all.order(:editor)
+    elsif params[:order] == "9"
+      @books = Book.all.order(:editionyear)
+    elsif params[:order] == "10"
+      @books = Book.all.order(:editora)
+    elsif params[:order] == "11"
+      @books = Book.all.order(:isbn)
+    elsif params[:order] == "12"
+      @books = Book.all.order(:binding)
+    elsif params[:order] == "13"
+      @books = Book.all.order(:realisation)
+    elsif params[:order] == "14"
+      @books = Book.all.order(:designer)
+    elsif params[:order] == "15"
+      @books = Book.all.order(:correction)
+    elsif params[:order] == "16"
+      @books = Book.all.order(:clasification)
+    elsif params[:order] == "17"
+      @books = Book.all.order(:content)
+    elsif params[:order] == "18"
+      @books = Book.all.order(:banner)
+    elsif params[:order] == "19"
+      @books = Book.all.order(:troquelado)
+    elsif params[:order] == "20"
+      @books = Book.all.order(:collection)
+    end
     @books = @books.where(:title => params[:title]) if not params[:title].nil? and params[:title] != ''
     @books = @books.where(:year => params[:year]) if not params[:year].nil? and params[:year] != ''
 
@@ -100,6 +141,10 @@ class BooksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def authorize
+      authorize! [:new, :create, :edit , :update, :destroy], @book
+    end
+
     def set_book
       @book = Book.find(params[:id])
     end

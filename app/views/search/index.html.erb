@@ -1,18 +1,46 @@
 <h1>Búsqueda</h1>
+<ul class="nav nav-tabs nav-justified">
+  <li><a data-toggle="tab" aria-controls="Articles" href="#Articles">Artículos
+  </a></li>
+  <li><a data-toggle="tab" aria-controls="Employees" href="#Employees">Empleados
+  </a></li>
+  <li><a data-toggle="tab" aria-controls="Books" href="#Books">Libros
+  </a></li>
+  <li><a data-toggle="tab" aria-controls="Magazines" href="#Magazines">Revistas
+  </a></li>
+</ul>
 
-<%= form_tag("/search") do %>
-    <%= select_tag :selected, options_for_select(@tables)%>
-    <%= submit_tag :Search %>
-    <br>
-    <%= render 'search/booksSearch' %>
-<% end %>
-
-<div>
-<div id="searchDiv">
-</div>
-  <div>
+<div class="tab-content">
+  <div class="tab-pane" id="Articles">
+    <%= form_tag("/search") do %>
+        <%= hidden_field_tag :selected, 1 %>
+        <%= render partial: 'articlesSearch' %>
+        <br/><br/>
+        <%= submit_tag "Buscar" %>
+    <% end %>
+  </div>
+  <div class="tab-pane" id="Employees">
+    <%= form_tag("/search") do %>
+        <%= hidden_field_tag :selected, 2 %>
+        <%= render partial: 'employeesSearch' %>
+        <br/><br/>
+        <%= submit_tag :"Buscar" %>
+    <% end %>
+  </div>
+  <div class="tab-pane" id="Books">
+    <%= form_tag("/search") do %>
+        <%= hidden_field_tag :selected, 3 %>
+        <%= render partial: 'booksSearch' %>
+        <br/><br/>
+        <%= submit_tag :"Buscar" %>
+    <% end %>
+  </div>
+  <div class="tab-pane" id="Magazines">
+    <%= form_tag("/search") do %>
+        <%= hidden_field_tag :selected, 4 %>
+        <%= render partial: 'magazinesSearch' %>
+        <br/><br/>
+        <%= submit_tag :"Buscar" %>
+    <% end %>
   </div>
 </div>
-
-<script type="text/javascript" charset="utf-8">
-</script>

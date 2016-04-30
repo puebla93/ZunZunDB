@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label "Autor" %><br>
-    <%= f.select :author, options_for_select(@employees) %>
+    <%= f.select :author, options_for_select(@employees), include_blank: true %>
   </div>
   <div class="field">
     <%= f.label "Ilustrador" %><br>
@@ -37,11 +37,11 @@
     </div>
     <div class="field">
       <%= f.label "Revista" %><br>
-      <%= f.select :magazineId, @magazines %>
+      <%= f.select :magazineId, @magazines, include_blank: true %>
     </div>
     <div class="field">
       <%= f.label "Colorista" %><br>
-      <%= f.select :colorist, @employees %>
+      <%= f.select :colorist, @employees, include_blank: true %>
     </div>
     <div class="field">
       <%= f.label "Cant.Páginas" %><br>

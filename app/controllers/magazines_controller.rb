@@ -1,10 +1,21 @@
 class MagazinesController < ApplicationController
   before_action :set_magazine, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /magazines
   # GET /magazines.json
   def index
-    @magazines = Magazine.all
+    if params[:order].nil? or params[:order] == "1"
+      @magazines = Magazine.all.order(:number)
+    elsif params[:order] == "2"
+      @magazines = Magazine.all.order(:month)
+    elsif params[:order] == "3"
+      @magazines = Magazine.all.order(:year)
+    elsif params[:order] == "4"
+      @magazines = Magazine.all.order(:cd)
+    elsif params[:order] == "5"
+      @magazines = Magazine.all.order(:issn)
+    end
     @magazines = @magazines.where(:number => params[:number]) if not params[:number].nil? and params[:number] != ''
     @magazines = @magazines.where(:month => params[:month]) if not params[:month].nil? and params[:month] != ''
     @magazines = @magazines.where(:year => params[:year]) if not params[:year].nil? and params[:year] != ''
@@ -67,6 +78,10 @@ class MagazinesController < ApplicationController
   end
 
   private
+    def authorize
+      authorize! [:new, :create, :edit , :update, :destroy], @magazine
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_magazine
       @magazine = Magazine.find(params[:id])

@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Libros</h1>
-
+<% if user_signed_in? %>
 <%= link_to '+ Nuevo Libro', new_book_path %>
 <br>
+<% end %>
 <br>
 
 <table style="width: 200%">
   <thead>
     <tr>
-      <th>Título</th>
-      <th>Año</th>
-      <th>Autor</th>
-      <th>Ilustrador</th>
-      <th>Fotógrafo</th>
-      <th>Cant.Páginas</th>
-      <th>Formato</th>
-      <th>Editor</th>
-      <th>AñoEdición</th>
-      <th>Editora</th>
-      <th>ISBN</th>
-      <th>Encuadernación</th>
-      <th>Realisazión</th>
-      <th>Diseñador</th>
-      <th>Corrección</th>
-      <th>Clasificación</th>
-      <th>Contenido</th>
-      <th>Pancarta</th>
-      <th>Troquelado</th>
-      <th>Colección</th>
+      <th><a href="/books?order=1">Título</a></th>
+      <th><a href="/books?order=2">Año</a></th>
+      <th><a href="/books?order=3">Autor</a></th>
+      <th><a href="/books?order=4">Ilustrador</a></th>
+      <th><a href="/books?order=5">Fotógrafo</a></th>
+      <th><a href="/books?order=6">Cant.Páginas</a></th>
+      <th><a href="/books?order=7">Formato</a></th>
+      <th><a href="/books?order=8">Editor</a></th>
+      <th><a href="/books?order=9">AñoEdición</a></th>
+      <th><a href="/books?order=10">Editora</a></th>
+      <th><a href="/books?order=11">ISBN</a></th>
+      <th><a href="/books?order=12">Encuadernación</a></th>
+      <th><a href="/books?order=13">Realisazión</a></th>
+      <th><a href="/books?order=14">Diseñador</a></th>
+      <th><a href="/books?order=15">Corrección</a></th>
+      <th><a href="/books?order=16">Clasificación</a></th>
+      <th><a href="/books?order=17">Contenido</a></th>
+      <th><a href="/books?order=18">Pancarta</a></th>
+      <th><a href="/books?order=19">Troquelado</a></th>
+      <th><a href="/books?order=20">Colección</a></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,9 +39,9 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.year %></td>
-        <td><%= book.author %></td>
-        <td><%= book.ilustrator %></td>
-        <td><%= book.photographer %></td>
+        <td><%= Employee.find(book.author).name %></td>
+        <td><%= Employee.find(book.ilustrator).name if not book.ilustrator.nil? %></td>
+        <td><%= Employee.find(book.photographer).name if not book.ilustrator.nil? %></td>
         <td><%= book.totalpages %></td>
         <td><%= book.format %></td>
         <td><%= book.editor %></td>
@@ -49,16 +50,18 @@
         <td><%= book.isbn %></td>
         <td><%= book.binding %></td>
         <td><%= book.realisation %></td>
-        <td><%= book.designer %></td>
+        <td><%= Employee.find(book.designer) if not book.ilustrator.nil? %></td>
         <td><%= book.correction %></td>
         <td><%= book.clasification %></td>
         <td><%= book.content %></td>
         <td><%= book.banner %></td>
         <td><%= book.troquelado %></td>
         <td><%= book.collection %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', book %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Editar', edit_book_path(book) %></td>
+          <td><%= link_to 'Eliminar', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

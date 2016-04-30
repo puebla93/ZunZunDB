@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Revistas</h1>
+<% if user_signed_in? %>
 <%= link_to '+ Nueva Revista', new_magazine_path %>
 <br>
+<% end %>
 <br>
 
 <table style="width: 100%">
   <thead>
     <tr>
-      <th>Número</th>
-      <th>Mes</th>
-      <th>Año</th>
-      <th>CD</th>
-      <th>ISSN</th>
+      <th><a href="/magazines?order=1">Número</a></th>
+      <th><a href="/magazines?order=2">Mes</a></th>
+      <th><a href="/magazines?order=3">Año</a></th>
+      <th><a href="/magazines?order=4">CD</a></th>
+      <th><a href="/magazines?order=5">ISSN</a></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,9 +27,11 @@
         <td><%= magazine.year %></td>
         <td><%= magazine.cd %></td>
         <td><%= magazine.issn %></td>
-        <td><%= link_to 'Show', magazine %></td>
-        <td><%= link_to 'Edit', edit_magazine_path(magazine) %></td>
-        <td><%= link_to 'Destroy', magazine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', magazine %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Editar', edit_magazine_path(magazine) %></td>
+          <td><%= link_to 'Eliminar', magazine, method: :delete, data: { confirm: '¿Está seguro??' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

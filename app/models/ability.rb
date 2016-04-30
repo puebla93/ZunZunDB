@@ -29,7 +29,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
-    user ||= User.new({username: 'guest', role: false})
+    user ||= User.new({name: 'guest', role: false})
 
     if user.role
       can :manage, :all

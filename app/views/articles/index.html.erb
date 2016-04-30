@@ -1,26 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Artículos</h1>
+<% if user_signed_in? %>
 <%= link_to '+ Nuevo Artículo', new_article_path %>
 <br>
+<% end %>
 <br>
 <table style="width: 150%">
   <thead>
     <tr>
-      <th>Título</th>
-      <th>Autor</th>
-      <th>Ilustrador</th>
-      <th>Fotógrafo</th>
-      <th>Género</th>
-      <th>Tema</th>
-      <th>Revista</th>
-      <th>Colorista</th>
-      <th>Cant.Páginas</th>
-      <th>PDF</th>
-      <th>LineaTemática</th>
-      <th>Original</th>
-      <th>UbicaciónOriginal</th>
-      <th>Sección</th>
+      <th><a href="/articles?order=1">Título</a></th>
+      <th><a href="/articles?order=2">Autor</a></th>
+      <th><a href="/articles?order=3">Ilustrador</a></th>
+      <th><a href="/articles?order=4">Fotógrafo</a></th>
+      <th><a href="/articles?order=5">Género</a></th>
+      <th><a href="/articles?order=6">Tema</a></th>
+      <th><a href="/articles?order=7">Revista</a></th>
+      <th><a href="/articles?order=8">Colorista</a></th>
+      <th><a href="/articles?order=9">Cant.Páginas</a></th>
+      <th><a href="/articles?order=10">PDF</a></th>
+      <th><a href="/articles?order=11">LineaTemática</a></th>
+      <th><a href="/articles?order=12">Original</a></th>
+      <th><a href="/articles?order=13">UbicaciónOriginal</a></th>
+      <th><a href="/articles?order=14">Sección</a></th>
       <th colspan="10"></th>
     </tr>
   </thead>
@@ -29,22 +31,24 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
-        <td><%= article.author %></td>
-        <td><%= article.ilustrator %></td>
-        <td><%= article.photographer %></td>
+        <td><%= Employee.find(article.author).name %></td>
+        <td><%= Employee.find(article.ilustrator).name if not article.ilustrator.nil? %></td>
+        <td><%= Employee.find(article.photographer).name if not article.photographer.nil? %></td>
         <td><%= article.gender %></td>
         <td><%= article.subject %></td>
-        <td><%= article.magazineId %></td>
-        <td><%= article.colorist %></td>
+        <td><%= Magazine.find(article.magazineId).number %></td>
+        <td><%= Employee.find(article.colorist).name if not article.colorist.nil? %></td>
         <td><%= article.totalpages %></td>
         <td><%= article.pdf %></td>
         <td><%= article.thematicdesing %></td>
         <td><%= article.original %></td>
         <td><%= article.originallocation %></td>
         <td><%= article.section %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', article %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Editar', edit_article_path(article) %></td>
+          <td><%= link_to 'Eliminar', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

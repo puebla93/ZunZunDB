@@ -2,19 +2,19 @@
 <%= label_tag "título" %><%= text_field_tag "title" %>
 <p><b>Autor:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "author_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "author_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
 <p><b>Ilustrador:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "ilustrator_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
 <p><b>Fotógrafo:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "photographer_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
@@ -23,7 +23,7 @@
 <%= label_tag "tema" %><%= text_field_tag "subject" %>
 <p><b>Revista:</b></p>
 <uL>
-  <%= label_tag "* número" %><%= text_field_tag "magazine_number" %>
+  <%= label_tag "* número" %><%= select_tag "magazine_number", options_for_select(@magazines), include_blank: true %>
   <br>
   <%= label_tag "* mes" %><%= select_tag "magazine_month", options_for_select(["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]), include_blank: true %>
   <br>
@@ -35,7 +35,7 @@
 </ul>
 <p><b>Colorista:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "colorist_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "colorist_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "colorist_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>

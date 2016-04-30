@@ -1,11 +1,40 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :set_var, only: [:new, :edit, :create, :update]
+  before_action :authorize, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if params[:order].nil? or params[:order] == "1"
+      @articles = Article.all.order(:title)
+    elsif params[:order] == "2"
+      @articles = Article.all.order(:author)
+    elsif params[:order] == "3"
+      @articles = Article.all.order(:ilustrator)
+    elsif params[:order] == "4"
+      @articles = Article.all.order(:photographer)
+    elsif params[:order] == "5"
+      @articles = Article.all.order(:gender)
+    elsif params[:order] == "6"
+      @articles = Article.all.order(:subject)
+    elsif params[:order] == "7"
+      @articles = Article.all.order(:magazineId)
+    elsif params[:order] == "8"
+      @articles = Article.all.order(:colorist)
+    elsif params[:order] == "9"
+      @articles = Article.all.order(:totalpages)
+    elsif params[:order] == "10"
+      @articles = Article.all.order(:pdf)
+    elsif params[:order] == "11"
+      @articles = Article.all.order(:thematicdesing)
+    elsif params[:order] == "12"
+      @articles = Article.all.order(:original)
+    elsif params[:order] == "13"
+      @articles = Article.all.order(:originallocation)
+    elsif params[:order] == "14"
+      @articles = Article.all.order(:section)
+    end
     @articles = @articles.where(:title => params[:title]) if not params[:title].nil? and params[:title] != ''
 
     authors = Employee.all
@@ -97,6 +126,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+    def authorize
+      authorize! [:new, :create, :edit , :update, :destroy], @article
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])

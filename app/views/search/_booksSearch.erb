@@ -4,19 +4,19 @@
 <%= label_tag "año" %><%= text_field_tag "year" %>
 <p><b>Autor:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "author_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "author_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
 <p><b>Ilustrador:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "ilustrator_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
 <p><b>Fotógrafo:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "photographer_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
@@ -26,7 +26,7 @@
 <br>
 <p><b>Editor:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "editor_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "editor_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "editor_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>
@@ -41,7 +41,7 @@
 <%= label_tag "realisación" %><%= text_field_tag "realisation" %>
 <p><b>Diseñador:</b></p>
 <uL>
-  <%= label_tag "* nombre" %><%= text_field_tag "designer_name" %>
+  <%= label_tag "* nombre" %><%= select_tag "designer_name", options_for_select(@employees), include_blank: true %>
   <br>
   <%= label_tag "* género" %><%= select_tag "designer_gender", options_for_select(["M", "F"]), include_blank: true %>
 </uL>

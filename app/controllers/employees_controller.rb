@@ -1,10 +1,15 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    if params[:order].nil? or params[:order] == "1"
+      @employees = Employee.all.order(:name)
+    elsif
+      @employees = Employee.all.order(:gender)
+    end
     @employees = @employees.where(:name => params[:name]) if not params[:name].nil? and params[:name] != ''
     @employees = @employees.where(:gender => params[:gender]) if not params[:gender].nil? and params[:gender] != ''
   end
@@ -64,6 +69,10 @@ class EmployeesController < ApplicationController
   end
 
   private
+    def authorize
+      authorize! [:new, :create, :edit , :update, :destroy], @employee
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
       @employee = Employee.find(params[:id])
