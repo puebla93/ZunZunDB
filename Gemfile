@@ -1,4 +1,4 @@
-source 'file:///home/hd/Documents/rubygems/'
+source 'file:///home/diana/Documents/rubygems/'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

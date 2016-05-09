@@ -1,58 +1,142 @@
-<br>
-<%= label_tag "título" %><%= text_field_tag "title" %>
-<br>
-<%= label_tag "año" %><%= text_field_tag "year" %>
-<p><b>Autor:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "author_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<p><b>Ilustrador:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<p><b>Fotógrafo:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<%= label_tag "cant. páginas" %><%= text_field_tag "totalpages" %>
-<br>
-<%= label_tag "formato" %><%= text_field_tag "format" %>
-<br>
-<p><b>Editor:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "editor_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "editor_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<%= label_tag "año edición" %><%= text_field_tag "editionyear" %>
-<br>
-<%= label_tag "editora" %><%= text_field_tag "editora" %>
-<br>
-<%= label_tag "isbn" %><%= text_field_tag "isbn" %>
-<br>
-<%= label_tag "encuadernación" %><%= text_field_tag "binding" %>
-<br>
-<%= label_tag "realisación" %><%= text_field_tag "realisation" %>
-<p><b>Diseñador:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "designer_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "designer_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<%= label_tag "corrección" %><%= text_field_tag "correction" %>
-<br>
-<%= label_tag "clasificación" %><%= text_field_tag "clasification" %>
-<br>
-<%= label_tag "contenido" %><%= text_field_tag "content" %>
-<br>
-<%= label_tag "pancarta" %><%= text_field_tag "banner" %>
-<br>
-<%= label_tag "troquelado" %><%= text_field_tag "troquelado" %>
-<br>
-<%= label_tag "colección" %><%= text_field_tag "collection" %>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+          Caracter'isticas
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse in">
+      <div class="panel-body"> 
+      <div class="col-md-5">   
+          <br>
+        <%= label_tag "título" %><%= text_field_tag "title" %>
+        <br>
+        <%= label_tag "año" %><%= text_field_tag "year" %>
+        <br>  
+        <%= label_tag "cant. páginas" %><%= text_field_tag "totalpages" %>
+        <br>
+        <%= label_tag "formato" %><%= text_field_tag "format" %>
+        <br>
+        <%= label_tag "año edición" %><%= text_field_tag "editionyear" %>
+        <br>
+        <%= label_tag "editora" %><%= text_field_tag "editora" %>
+        <br>
+        <%= label_tag "isbn" %><%= text_field_tag "isbn" %>
+        <br>
+        <%= label_tag "encuadernación" %><%= text_field_tag "binding" %>
+        <br>
+        <%= label_tag "realisación" %><%= text_field_tag "realisation" %>
+        <br>
+        <%= label_tag "corrección" %><%= text_field_tag "correction" %>
+        <br>
+        <%= label_tag "clasificación" %><%= text_field_tag "clasification" %>
+        <br>
+        <%= label_tag "contenido" %><%= text_field_tag "content" %>
+        <br>
+        <%= label_tag "pancarta" %><%= text_field_tag "banner" %>
+        <br>
+        <%= label_tag "troquelado" %><%= text_field_tag "troquelado" %>
+        <br>
+        <%= label_tag "colección" %><%= text_field_tag "collection" %>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+          Autor
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEight" class="panel-collapse collapse">
+      <div class="panel-body">
+        <uL>
+          <%= label_tag "* nombre" %><%= select_tag "author_name", options_for_select(@employees), include_blank: true %>
+            <br>
+          <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
+          </uL>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+          Ilustrador
+        </a>
+      </h4>
+    </div>
+    <div id="collapseNine" class="panel-collapse collapse">
+      <div class="panel-body">
+       <uL>
+          <%= label_tag "* nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true %>
+          <br>
+          <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
+        </uL>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+          Fotógrafo
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTen" class="panel-collapse collapse">
+      <div class="panel-body">
+        <uL>
+           <%= label_tag "* nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true %>
+          <br>
+          <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
+        </uL>
+      </div>
+    </div>
+  </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
+          Editor
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEleven" class="panel-collapse collapse">
+      <div class="panel-body">
+       <uL>
+          <%= label_tag "* nombre" %><%= select_tag "editor_name", options_for_select(@employees), include_blank: true %>
+          <br>
+          <%= label_tag "* género" %><%= select_tag "editor_gender", options_for_select(["M", "F"]), include_blank: true %>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">
+          Diseñador
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwelve" class="panel-collapse collapse">
+      <div class="panel-body">
+        <uL>
+          <%= label_tag "* nombre" %><%= select_tag "designer_name", options_for_select(@employees), include_blank: true %>
+          <br>
+          <%= label_tag "* género" %><%= select_tag "designer_gender", options_for_select(["M", "F"]), include_blank: true %>
+        </uL>
+      </div>
+    </div>
+  </div>
+</div>

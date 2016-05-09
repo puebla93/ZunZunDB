@@ -1,10 +1,25 @@
 <br>
-<%= label_tag "number" %><%= text_field_tag "number" %>
+<input id="number" type="text" name="number" class="form-control" placeholder="Numero"></input>
 <br>
-<%= label_tag "month" %> <%= select_tag("month", options_for_select([nil, "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]))%>
+<p>Mes</p>
+<select id="month" name="month" class="form-control">
+    <option value=""></option>
+    <option value="Enero">Enero</option>
+    <option value="Febrero">Febrero</option>
+    <option value="Marzo">Marzo</option>
+    <option value="Abril">Abril</option>
+    <option value="Mayo">Mayo</option>
+    <option value="Junio">Junio</option>
+    <option value="Julio">Julio</option>
+    <option value="Agosto">Agosto</option>
+    <option value="Septiembre">Septiembre</option>
+    <option value="Octubre">Octubre</option>
+    <option value="Noviembre">Noviembre</option>
+    <option value="Diciembre">Diciembre</option>
+</select>
 <br>
-<%= label_tag "year" %><%= text_field_tag "year" %>
+<input id="year" type="text" name="year" class="form-control" placeholder="Anno"></input>
 <br>
-<%= label_tag "cd" %><%= text_field_tag "cd" %>
+<input id="cd" type="text" name="cd" class="form-control" placeholder="Cd"></input>
 <br>
-<%= label_tag "issn" %><%= text_field_tag "issn" %>
+<input id="issn" type="text" name="issn" class="form-control" placeholder="Issn"></input>

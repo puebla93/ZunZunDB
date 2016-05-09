@@ -1,52 +1,139 @@
-<br>
-<%= label_tag "título" %><%= text_field_tag "title" %>
-<p><b>Autor:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "author_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<p><b>Ilustrador:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<p><b>Fotógrafo:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<%= label_tag "género" %><%= text_field_tag "gender" %>
-<br>
-<%= label_tag "tema" %><%= text_field_tag "subject" %>
-<p><b>Revista:</b></p>
-<uL>
-  <%= label_tag "* número" %><%= select_tag "magazine_number", options_for_select(@magazines), include_blank: true %>
-  <br>
-  <%= label_tag "* mes" %><%= select_tag "magazine_month", options_for_select(["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]), include_blank: true %>
-  <br>
-  <%= label_tag "* año" %><%= text_field_tag "magazine_year" %>
-  <br>
-  <%= label_tag "* cd" %><%= text_field_tag "magazine_cd" %>
-  <br>
-  <%= label_tag "* issn" %><%= text_field_tag "magazine_issn" %>
-</ul>
-<p><b>Colorista:</b></p>
-<uL>
-  <%= label_tag "* nombre" %><%= select_tag "colorist_name", options_for_select(@employees), include_blank: true %>
-  <br>
-  <%= label_tag "* género" %><%= select_tag "colorist_gender", options_for_select(["M", "F"]), include_blank: true %>
-</uL>
-<%= label_tag "cant. páginas" %><%= text_field_tag "totalpages" %>
-<br>
-<%= label_tag "pdf" %><%= text_field_tag "pdf" %>
-<br>
-<%= label_tag "línea temática" %><%= text_field_tag "thematicdesing" %>
-<br>
-<%= label_tag "original" %><%= text_field_tag "original" %>
-<br>
-<%= label_tag "ubicación original" %><%= text_field_tag "originallocation" %>
-<br>
-<%= label_tag "sección" %><%= text_field_tag "section" %>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Caracter'isticas
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body"> 
+      <div class="col-md-5">   
+          <br>
+          <input id="title" type="text" name="title" class="form-control" placeholder="Titulo"></input>
+          <br>
+          <input id="totalpages" type="text" name="totalpages" class="form-control" 
+          placeholder="Total de Paginas"></input>
+          <br>
+          <input id="pdf" type="text" name="pdf" class="form-control" placeholder="Pdf"></input>
+          <br>
+          <input id="thematicdesing" type="text" name="thematicdesing" class="form-control" 
+          placeholder="Linea Tematica"></input>
+          <br>
+          <input id="original" type="text" name="original" class="form-control" placeholder="Original"></input>
+          <br>
+          <input id="originallocation" type="text" name="originallocation" class="form-control" 
+          placeholder="Ubicacion Original"></input>
+          <br>
+          <input id="subject" type="text" name="subject" class="form-control" placeholder="Tema"></input>
+          <br>
+          <input id="gender" type="text" name="gender" class="form-control" placeholder="Genero"></input>
+          <br>
+          <input id="section" type="text" name="section" class="form-control" placeholder="Seccion"></input>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Autor
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <uL>
+          <%= label_tag "* nombre" %><%= select_tag "author_name", options_for_select(@employees), include_blank: true %>
+          <br>
+          <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
+          </uL>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Ilustrador
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+       <uL>
+          <%= label_tag "* nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true %>
+          <br>
+          <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
+        </uL>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          Fotógrafo
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <uL>
+          <%= label_tag "* nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true %>
+          <br>
+          <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
+        </uL>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+          Revista
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+       <uL>
+        <%= label_tag "* número" %><%= select_tag "magazine_number", options_for_select(@magazines), include_blank: true %>
+        <br>
+        <%= label_tag "* mes" %><%= select_tag "magazine_month", options_for_select(["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]), include_blank: true %>
+        <br>
+        <%= label_tag "* año" %><%= text_field_tag "magazine_year" %>
+        <br>
+        <%= label_tag "* cd" %><%= text_field_tag "magazine_cd" %>
+        <br>
+        <%= label_tag "* issn" %><%= text_field_tag "magazine_issn" %>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+          Colorista
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse">
+      <div class="panel-body">
+        <uL>
+          <%= label_tag "* nombre" %><%= select_tag "colorist_name", options_for_select(@employees), include_blank: true %>
+        <br>
+        <%= label_tag "* género" %><%= select_tag "colorist_gender", options_for_select(["M", "F"]), include_blank: true %>
+        </uL>
+      </div>
+    </div>
+  </div>
+</div>

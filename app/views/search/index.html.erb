@@ -15,16 +15,17 @@
     <%= form_tag("/search") do %>
         <%= hidden_field_tag :selected, 1 %>
         <%= render partial: 'articlesSearch' %>
-        <br/><br/>
-        <%= submit_tag "Buscar" %>
+        <input type="submit" value="Buscar" name="commit" class="btn btn-primary"></input>
     <% end %>
   </div>
   <div class="tab-pane" id="Employees">
     <%= form_tag("/search") do %>
         <%= hidden_field_tag :selected, 2 %>
-        <%= render partial: 'employeesSearch' %>
-        <br/><br/>
-        <%= submit_tag :"Buscar" %>
+        <div class="col-md-5">
+          <%= render partial: 'employeesSearch' %>
+          <br/><br/>
+          <input type="submit" value="Buscar" name="commit" class="btn btn-primary"></input>
+        </div>
     <% end %>
   </div>
   <div class="tab-pane" id="Books">
@@ -32,15 +33,17 @@
         <%= hidden_field_tag :selected, 3 %>
         <%= render partial: 'booksSearch' %>
         <br/><br/>
-        <%= submit_tag :"Buscar" %>
+        <input type="submit" value="Buscar" name="commit" class="btn btn-primary"></input>
     <% end %>
   </div>
   <div class="tab-pane" id="Magazines">
     <%= form_tag("/search") do %>
         <%= hidden_field_tag :selected, 4 %>
-        <%= render partial: 'magazinesSearch' %>
-        <br/><br/>
-        <%= submit_tag :"Buscar" %>
+        <div class="col-md-5">
+          <%= render partial: 'magazinesSearch' %>
+          <br/><br/>
+          <input type="submit" value="Buscar" name="commit" class="btn btn-primary"></input>
+        </div>
     <% end %>
   </div>
 </div>

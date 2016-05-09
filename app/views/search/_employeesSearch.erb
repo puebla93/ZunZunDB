@@ -1,4 +1,9 @@
 <br>
-<%= label_tag "name" %><%= text_field_tag "name" %>
+<input id="name" type="text" name="name" class="form-control" placeholder="Name"></input>
 <br>
-<%= label_tag "gender" %> <%= select_tag("gender", options_for_select([nil, "M", "F"]))%>
+<p>Genero</p>
+<select id="gender" name="gender" class="form-control">
+  	<option value=""></option>
+	<option value="M">M</option>
+	<option value="F">F</option>
+</select>
