@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label "Título" %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label "Año" %><br>
-    <%= f.number_field :year %>
+    <%= f.number_field :year, class: "form-control" %>
   </div>
     <div class="field">
       <%= f.label "Autor" %><br>
@@ -33,11 +33,11 @@
     </div>
     <div class="field">
       <%= f.label "Cant.Páginas" %><br>
-      <%= f.number_field :totalpages %>
+      <%= f.number_field :totalpages, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Formato" %><br>
-      <%= f.text_field :format %>
+      <%= f.text_field :format, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Editor" %><br>
@@ -45,23 +45,23 @@
     </div>
     <div class="field">
       <%= f.label "Año Edición" %><br>
-      <%= f.text_field :editionyear %>
+      <%= f.text_field :editionyear, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Editora" %><br>
-      <%= f.text_field :editora %>
+      <%= f.text_field :editora, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "ISBN" %><br>
-      <%= f.number_field :isbn %>
+      <%= f.number_field :isbn, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Encuadernación" %><br>
-      <%= f.text_field :binding %>
+      <%= f.text_field :binding, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Realisación" %><br>
-      <%= f.text_field :realisation %>
+      <%= f.text_field :realisation, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Diseñador" %><br>
@@ -69,29 +69,29 @@
     </div>
     <div class="field">
       <%= f.label "Corrección" %><br>
-      <%= f.text_field :correction %>
+      <%= f.text_field :correction, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Clasificación" %><br>
-      <%= f.text_field :clasification %>
+      <%= f.text_field :clasification, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Contenido" %><br>
-      <%= f.text_field :content %>
+      <%= f.text_field :content, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Pancarta" %><br>
-      <%= f.text_field :banner %>
+      <%= f.text_field :banner, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Troquelado" %><br>
-      <%= f.text_field :troquelado %>
+      <%= f.text_field :troquelado, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label "Colección" %><br>
-      <%= f.text_field :collection %>
+      <%= f.text_field :collection, class: "form-control" %>
     </div>
     <div class="actions">
-      <%= f.submit "Crear Libro"%>
+      <%= f.submit "Crear Libro", class: "btn btn-primary" %>
     </div>
 <% end %>

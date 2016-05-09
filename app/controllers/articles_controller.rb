@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :set_var, only: [:new, :edit, :create, :update]
+  before_action :set_var, only: [:new, :edit, :create, :update, :show]
   before_action :authorize, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /articles

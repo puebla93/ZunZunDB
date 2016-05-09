@@ -1,57 +1,57 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @article.title %>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @article.author %>
+  <strong>Autor:</strong>
+  <%= Employee.find(@article.author).name %>
 </p>
 
 <p>
-  <strong>Ilustrator:</strong>
-  <%= @article.ilustrator %>
+  <strong>Ilustrador:</strong>
+  <%= Employee.find(@article.ilustrator).name if not @article.ilustrator.nil? %>
 </p>
 
 <p>
-  <strong>Photographer:</strong>
-  <%= @article.photographer %>
+  <strong>Fotógrafo:</strong>
+  <%= Employee.find(@article.photographer).name if not @article.photographer.nil? %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
+  <strong>Género:</strong>
   <%= @article.gender %>
 </p>
 
 <p>
-  <strong>Subject:</strong>
+  <strong>Tema:</strong>
   <%= @article.subject %>
 </p>
 
 <p>
-  <strong>Magazineid:</strong>
-  <%= @article.magazineId %>
+  <strong>Revista:</strong>
+  <%= Magazine.find(@article.magazineId).number %>
 </p>
 
 <p>
-  <strong>Colorist:</strong>
-  <%= @article.colorist %>
+  <strong>Colorista:</strong>
+  <%= Employee.find(@article.colorist).name if not @article.colorist.nil? %>
 </p>
 
 <p>
-  <strong>Totalpages:</strong>
+  <strong>Cant. Páginas:</strong>
   <%= @article.totalpages %>
 </p>
 
 <p>
-  <strong>Pdf:</strong>
+  <strong>PDF:</strong>
   <%= @article.pdf %>
 </p>
 
 <p>
-  <strong>Thematicdesing:</strong>
+  <strong>Línea Temática:</strong>
   <%= @article.thematicdesing %>
 </p>
 
@@ -61,14 +61,15 @@
 </p>
 
 <p>
-  <strong>Originallocation:</strong>
+  <strong>Ubic. Original:</strong>
   <%= @article.originallocation %>
 </p>
 
 <p>
-  <strong>Section:</strong>
+  <strong>Sección:</strong>
   <%= @article.section %>
 </p>
-
+<% if user_signed_in? %>
 <%= link_to 'Editar', edit_article_path(@article) %> |
+<% end %>
 <%= link_to 'Atrás', articles_path %>

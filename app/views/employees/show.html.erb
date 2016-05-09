@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @employee.name %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
+  <strong>Género:</strong>
   <%= @employee.gender %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripción:</strong>
   <%= @employee.description %>
 </p>
-
+<% if user_signed_in? %>
 <%= link_to 'Editar', edit_employee_path(@employee) %> |
+<% end %>
 <%= link_to 'Atrás', employees_path %>

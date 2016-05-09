@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label "Nombre" %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name , class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label "Género" %><br>
-    <%= f.select :gender, ["M", "F"], include_blank: true %>
+    <%= f.select :gender, options_for_select(["M", "F"]), include_blank: true, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label "Descripcion" %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit "Crear Empleado"%>
+    <%= f.submit "Crear Empleado", class: "btn btn-primary" %>
   </div>
 <% end %>

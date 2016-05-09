@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label "Número" %><br>
-    <%= f.number_field :number %>
+    <%= f.number_field :number, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label "Mes" %><br>
@@ -21,17 +21,17 @@
   </div>
   <div class="field">
     <%= f.label "Año" %><br>
-    <%= f.text_field :year %>
+    <%= f.text_field :year, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label "CD" %><br>
-    <%= f.number_field :cd %>
+    <%= f.number_field :cd, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label "ISSN" %><br>
-    <%= f.text_field :issn %>
+    <%= f.text_field :issn, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit "Crear Revista" %>
+    <%= f.submit "Crear Revista" , class: "btn btn-primary" %>
   </div>
 <% end %>

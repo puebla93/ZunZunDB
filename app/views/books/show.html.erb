@@ -1,47 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <strong>Año:</strong>
   <%= @book.year %>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @book.author %>
+  <strong>Autor:</strong>
+  <%= Employee.find(@book.author).name %>
 </p>
 
 <p>
-  <strong>Ilustrator:</strong>
-  <%= @book.ilustrator %>
+  <strong>Ilustrador:</strong>
+  <%= Employee.find(@book.ilustrator).name if not @book.ilustrator.nil? %>
 </p>
 
 <p>
-  <strong>Photographer:</strong>
-  <%= @book.photographer %>
+  <strong>Fotógrafo:</strong>
+  <%= Employee.find(@book.photographer).name if not @book.photographer.nil? %>
 </p>
 
 <p>
-  <strong>Totalpages:</strong>
+  <strong>Cant. Páginas:</strong>
   <%= @book.totalpages %>
 </p>
 
 <p>
-  <strong>Format:</strong>
+  <strong>Formato:</strong>
   <%= @book.format %>
 </p>
 
 <p>
   <strong>Editor:</strong>
-  <%= @book.editor %>
+  <%= Employee.find(@book.editor).name if not @book.editor.nil? %>
 </p>
 
 <p>
-  <strong>Editionyear:</strong>
+  <strong>Año Edición:</strong>
   <%= @book.editionyear %>
 </p>
 
@@ -51,42 +51,42 @@
 </p>
 
 <p>
-  <strong>Isbn:</strong>
+  <strong>ISBN:</strong>
   <%= @book.isbn %>
 </p>
 
 <p>
-  <strong>Binding:</strong>
+  <strong>Encuadernación:</strong>
   <%= @book.binding %>
 </p>
 
 <p>
-  <strong>Realisation:</strong>
+  <strong>Realización:</strong>
   <%= @book.realisation %>
 </p>
 
 <p>
-  <strong>Designer:</strong>
-  <%= @book.designer %>
+  <strong>Diseñador:</strong>
+  <%= Employee.find(@book.designer).name if not @book.designer.nil? %>
 </p>
 
 <p>
-  <strong>Correction:</strong>
+  <strong>Corrección:</strong>
   <%= @book.correction %>
 </p>
 
 <p>
-  <strong>Clasification:</strong>
+  <strong>Clasificación:</strong>
   <%= @book.clasification %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Contenido:</strong>
   <%= @book.content %>
 </p>
 
 <p>
-  <strong>Banner:</strong>
+  <strong>Pancarta:</strong>
   <%= @book.banner %>
 </p>
 
@@ -96,9 +96,10 @@
 </p>
 
 <p>
-  <strong>Collecttion:</strong>
+  <strong>Collección:</strong>
   <%= @book.collection %>
 </p>
-
+<% if user_signed_in? %>
 <%= link_to 'Editar', edit_book_path(@book) %> |
+<% end %>
 <%= link_to 'Atrás', books_path %>

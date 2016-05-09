@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Caracter'isticas
+          Características
         </a>
       </h4>
     </div>
@@ -14,23 +14,23 @@
           <input id="title" type="text" name="title" class="form-control" placeholder="Titulo"></input>
           <br>
           <input id="totalpages" type="text" name="totalpages" class="form-control" 
-          placeholder="Total de Paginas"></input>
+          placeholder="Total de Páginas"></input>
           <br>
           <input id="pdf" type="text" name="pdf" class="form-control" placeholder="Pdf"></input>
           <br>
           <input id="thematicdesing" type="text" name="thematicdesing" class="form-control" 
-          placeholder="Linea Tematica"></input>
+          placeholder="Linea Temática"></input>
           <br>
           <input id="original" type="text" name="original" class="form-control" placeholder="Original"></input>
           <br>
           <input id="originallocation" type="text" name="originallocation" class="form-control" 
-          placeholder="Ubicacion Original"></input>
+          placeholder="Ubicación Original"></input>
           <br>
           <input id="subject" type="text" name="subject" class="form-control" placeholder="Tema"></input>
           <br>
-          <input id="gender" type="text" name="gender" class="form-control" placeholder="Genero"></input>
+          <input id="gender" type="text" name="gender" class="form-control" placeholder="Género"></input>
           <br>
-          <input id="section" type="text" name="section" class="form-control" placeholder="Seccion"></input>
+          <input id="section" type="text" name="section" class="form-control" placeholder="Sección"></input>
           </div>
       </div>
     </div>
@@ -46,11 +46,13 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
+      <div class="col-md-5">
         <uL>
-          <%= label_tag "* nombre" %><%= select_tag "author_name", options_for_select(@employees), include_blank: true %>
+          <%= label_tag "Nombre" %><%= select_tag "", options_for_select(@employees), include_blank: true, class: "form-control" %>
           <br>
-          <%= label_tag "* género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true %>
+          <%= label_tag "Género" %><%= select_tag "author_gender", options_for_select(["M", "F"]), include_blank: true, class: "form-control" %>
           </uL>
+      </div>
       </div>
     </div>
   </div>
@@ -65,11 +67,13 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
+      <div class="col-md-5">
        <uL>
-          <%= label_tag "* nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true %>
+          <%= label_tag "Nombre" %><%= select_tag "ilustrator_name", options_for_select(@employees), include_blank: true, class: "form-control" %>
           <br>
-          <%= label_tag "* género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true %>
+          <%= label_tag "Género" %><%= select_tag "ilustrator_gender", options_for_select(["M", "F"]), include_blank: true, class: "form-control" %>
         </uL>
+      </div>
       </div>
     </div>
   </div>
@@ -84,11 +88,13 @@
     </div>
     <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
+      <div class="col-md-5">
         <uL>
-          <%= label_tag "* nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true %>
+          <%= label_tag "Nombre" %><%= select_tag "photographer_name", options_for_select(@employees), include_blank: true, class: "form-control" %>
           <br>
-          <%= label_tag "* género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true %>
+          <%= label_tag "Género" %><%= select_tag "photographer_gender", options_for_select(["M", "F"]), include_blank: true, class: "form-control" %>
         </uL>
+      </div>
       </div>
     </div>
   </div>
@@ -103,17 +109,19 @@
     </div>
     <div id="collapseFive" class="panel-collapse collapse">
       <div class="panel-body">
+      <div class="col-md-5">
        <uL>
-        <%= label_tag "* número" %><%= select_tag "magazine_number", options_for_select(@magazines), include_blank: true %>
+        <%= label_tag "Número" %><%= select_tag "magazine_number", options_for_select(@magazines), include_blank: true, class: "form-control" %>
         <br>
-        <%= label_tag "* mes" %><%= select_tag "magazine_month", options_for_select(["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]), include_blank: true %>
+        <%= label_tag "Mes" %><%= select_tag "magazine_month", options_for_select(["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]), include_blank: true, class: "form-control" %>
         <br>
-        <%= label_tag "* año" %><%= text_field_tag "magazine_year" %>
+        <input id="magazine_year" type="text" name="magazine_year" class="form-control" placeholder="Año"></input>
         <br>
-        <%= label_tag "* cd" %><%= text_field_tag "magazine_cd" %>
+        <input id="magazine_cd" type="text" name="magazine_cd" class="form-control" placeholder="CD"></input>
         <br>
-        <%= label_tag "* issn" %><%= text_field_tag "magazine_issn" %>
+        <input id="magazine_issn" type="text" name="magazine_issn" class="form-control" placeholder="ISSN"></input>
       </ul>
+      </div>
       </div>
     </div>
   </div>
@@ -128,11 +136,13 @@
     </div>
     <div id="collapseSix" class="panel-collapse collapse">
       <div class="panel-body">
+      <div class="col-md-5">
         <uL>
-          <%= label_tag "* nombre" %><%= select_tag "colorist_name", options_for_select(@employees), include_blank: true %>
+          <%= label_tag "Nombre" %><%= select_tag "colorist_name", options_for_select(@employees), include_blank: true, class: "form-control" %>
         <br>
-        <%= label_tag "* género" %><%= select_tag "colorist_gender", options_for_select(["M", "F"]), include_blank: true %>
+        <%= label_tag "Género" %><%= select_tag "colorist_gender", options_for_select(["M", "F"]), include_blank: true, class: "form-control" %>
         </uL>
+      </div>
       </div>
     </div>
   </div>
