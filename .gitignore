@@ -17,4 +17,6 @@
 /tmp
 /.idea/
 /db/*.sqlite3
-
+*.swo
+*.swp
+*.jpg

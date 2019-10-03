@@ -2,7 +2,7 @@
 
 <h1>Empleados</h1>
 <% if user_signed_in? %>
-<%= link_to '+ Nuevo Empleado', new_employee_path %>
+<%= link_to '+ Nuevo Empleado', new_employee_path , class: "btn btn-primary", style: "color: white" %>
 <br>
 <% end %>
 <br>
@@ -11,7 +11,7 @@
   <thead>
     <tr>
       <th><a href="/employees?order=1">Nombre</a></th>
-      <th><a href="/employees?order=2">Género</a></th>
+      <th><a href="/employees?order=2">Sexo</a></th>
       <th>Descripción</th>
       <th colspan="3"></th>
     </tr>

@@ -2,7 +2,7 @@
 
 <h1>Libros</h1>
 <% if user_signed_in? %>
-<%= link_to '+ Nuevo Libro', new_book_path %>
+<%= link_to '+ Nuevo Libro', new_book_path, class: "btn btn-primary", style: "color: white" %>
 <br>
 <% end %>
 <br>
@@ -22,7 +22,7 @@
       <th><a href="/books?order=10">Editora</a></th>
       <th><a href="/books?order=11">ISBN</a></th>
       <th><a href="/books?order=12">Encuadernación</a></th>
-      <th><a href="/books?order=13">Realisazión</a></th>
+      <th><a href="/books?order=13">Realización</a></th>
       <th><a href="/books?order=14">Diseñador</a></th>
       <th><a href="/books?order=15">Corrección</a></th>
       <th><a href="/books?order=16">Clasificación</a></th>
